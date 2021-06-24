@@ -36,3 +36,81 @@ Types
 Why do we care about types?
     -> Types are used by the TypeScript compiler to analyze our code for errors
     -> Types allow other engineers to understand what values are flowing around our codebase
+
+Type annotations
+    -> Code we add to tell TypeScript what type of value a variable will be
+    -> We (developers) tell Typescript the type
+    -> When to use?
+        -> When we declare a variable on one line then initialize it later
+        -> When we want a variable to have a type that can't be inferred
+        -> When a function returns the 'any' type and we need to clarify the value
+
+Type inference
+    -> TypeScript tries to figure out what type of value a variable refers to
+    -> TypeScript guessed the type
+    -> If declaration and initialization are on the same line, TypeScript will figure out the type of 'color' for us
+    -> When to use?
+        -> Always!
+
+Type any
+    -> A type, just as 'string' or 'boolean' are
+    -> Means TS has no idea what this is - can't check for correct property references
+    -> Avoid variables with 'any' at all costs!!
+
+Type annotations for functions
+    -> Code we add to tell TypeScript what type of arguments a function will receive and what type of values it will return
+
+Type inference for functions
+    -> TypeScript tries to figure out what type of value a function will return
+
+
+Type with arrays
+    -> Arrays where each element is some consistent type of value
+
+    -> Why do we care?
+        -> TS can do type inference when extracting values from an array
+        -> TS can prevent us from adding incompatible values to the array
+        -> We can get help with 'map', 'forEach', 'reduce' functions
+        -> Flexible - arrays can still contain multiple different types
+
+    -> Where to use typed arrays?
+        -> Any time we need to represent a collection of records with some arbitrary sort order
+
+
+Tuples
+    
+    Tuple
+        -> Array-like structure where each element represents some property of a record
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Interfaces!!!!
+    -> Interfaces + Classes = How we get really strong code reuse in TS
+    -> General Strategy for Reusable Code in TS
+        -> Create functions that accept arguments that are typed with interfaces
+        -> Objects/classes can decide to 'implement' a given interface to work with a function
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Classes!!!
+    Definition
+        -> Blueprint to create an object with some fields (values) and methods (functions) to represent a 'thing'
+
+    In TS we can use public, private and protected
+        -> public
+            -> This method can be called any where, any time
+        -> private
+            -> This method can only be called by o ther methods in this class
+        -> protected
+            -> This method can be called by other methods in this class, or by other methods in child classes
+        
+        -> Why do we care about public, private and protected?
+            -> Using private and protected doesn't raise our application's security!!!!
+            -> We use them that other developers cant call these methods!! Example if method does something that might break our application if called!
+
+    Why we care about classes?
+        -> Interface + classes = How we get really strong code reuse in TS
