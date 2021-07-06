@@ -139,3 +139,33 @@ Inheritance / Abstract Classes
     -> Sets up a contract between different classes
     -> Use when we are trying to build up a definition of an object
     -> Strongly couples classes together
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Enum!!!
+
+Purpose of enum more than anything else is signaling to other engineers
+
+Enums
+    -> Follow near-identical syntax rules as normal objects
+    -> Creates an object with the same keys and values when converted TS to JS
+    -> Primary goal is to signal to other engineers that these are all closely related values
+    -> Use whenever we have a small fixed set of values that are all closely related and known at compile time
+
+Should we use an enum to represent...
+    ...primary colors on a color picker? - YES
+    ...the set of move categories on Netflix - NO
+    ...the titles of all blog posts by a particular user - NO
+    ...sizes of a drink on an ordering menu - YES
+    ...all years since the year 1750 - NO
+    ...the 'read' status of a text - YES
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Generics!!!!
+
+Generics
+    -> Like function arguments, but for types in class / function definitions
+    -> Allows us to define the type of a property / argument / return value at a future point
+    -> Used heavily when writin reusable code
