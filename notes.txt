@@ -169,3 +169,72 @@ Generics
     -> Like function arguments, but for types in class / function definitions
     -> Allows us to define the type of a property / argument / return value at a future point
     -> Used heavily when writin reusable code
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Inheritance vs Composition
+    -> Inheritance
+        -> Characterized by an 'is a' relationship between two classes
+
+    -> Composition
+        -> Characterized by a 'has a' relationship between two classes
+
+Example of Inheritance vs Composition
+    -> How to model a Window
+        -> Inheritance
+            -> class Window ------------>|
+                -> open: boolean         |
+                -> toggleOpen(): void    |
+                -> height: number        |----->--->|
+                -> width: number,        |          |
+                -> area(): number        |          |
+            -> class Wall -------------->|          |
+                -> color: string                    |
+                -> height: number                   |
+                -> width: number                    |
+                -> area(): number                   |
+                                                    |
+            -> class Rectangle  <-------------------|                         
+                -> height: number                   |
+                -> width: number                    |
+                -> area(): number                   |
+            -> class Wall  <------------------------|
+                -> color: string                    |
+            -> class Window  <----------------------|
+                -> open: boolean
+                -> toggleOpen(): void
+
+            -> What if we have some window which are circle?
+            -> Then we have to create entirely another class hierarchy for our application
+
+        -> Composition
+            -> class Wall
+                -> color: string
+                -> area(): number ------>--|
+                -> dimensions: Shape ------|->------|
+            -> class Rectangle  <------|---|--------|
+                -> height: number      |   |        |
+                -> width: number       |   |        |
+                -> area(): number  <---|---|        |
+            -> class Window            |   |        |
+                -> open: boolean       |   |        |
+                -> toggleOpen(): void  |   |        |
+                -> area(): number --->-|-->|        |        
+                -> dimensions: Shape ->|   |        |
+            -> class Circle  <---------|---|--------|
+                -> radius: number          |
+                -> area(): number  <-------|
+
+
+A Huge Misconseption Around Composition
+
+Favor object composition over class inheritance
+    -> Propably the most misunderstood statement ever!
+
+Example!
+
+Instead of making class Window a subclass of Rectangle (because windows happen to be rectangular),
+the Window class might reuse the behavior of Rectangle by keeping a Rectangle instance variable and delegating
+Rectangle-specific behavior to it. In other words, instead of a Window beaing a Rectangle, it would have a Rectangle.
+Window must now forward requests to its Rectangle instance explicitly, whereas before it would have inherited those operations.
