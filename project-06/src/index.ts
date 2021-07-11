@@ -1,11 +1,20 @@
-import { User } from './models/User';
+import { User, UserProps } from "./models/User";
+import { UserForm } from "./views/UserForm";
 
-const user = User.buildUser({ id: 1, name: 'newer name', age: 355 });
+const user = User.buildUser({ name: 'NAME', age: 20 });
 
-user.on('change', () => {
-    console.log(user);
-});
+const userForm = new UserForm(
+    document.getElementById('root'),
+    user
+);
 
-user.fetch();
+userForm.render();
 
-console.log(user.isAdminUser());
+
+// const colletion = User.buildUserCollection();
+// colletion.on('change', () => {
+//     console.log(colletion)
+//     console.log('changed');
+// })
+
+// colletion.fetch();
