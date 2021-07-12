@@ -34,8 +34,6 @@ export class User extends Model<UserProps> {
     }
 
 
-
-
     // With static methods we can now build different versions of User, example below if we
     // want to replace ApiSync with LocalSync and fetch user data with LocalSync implementation!
 

@@ -12,7 +12,7 @@ export interface Sync<T> {
 }
 
 export interface Events {
-    on(eventName: string, callBack: () => void): void;
+    on(eventName: string, callback: () => void): void;
     trigger(eventName: string): void;
 }
 
