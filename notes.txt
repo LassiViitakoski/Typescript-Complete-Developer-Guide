@@ -248,3 +248,46 @@ Serialize
 
 Deserialize
     -> Put data on an object using some previously saved data (json)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+NodeJS and Express with Typescript
+
+Massaging TS and Express to work better toggleOpen will take a lot of time + effort!
+    -> Must get one of two outcomes
+        -> Get better type safety (help TS do a better job of catching errors)
+            OR
+        -> Significantly enhance the developer experience
+
+Easy way
+    -> Stick a bunch of express code into classes
+
+Hard way
+    -> Stick a bunch of express code into classes + use some advanced features of TS
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Decorators!!!
+
+-> Functions that can be used to modify / change / anything different properties / methods in the class
+-> Not the same as Javascript decorators
+-> User inside / on classes only
+-> Understanding the order in which decorators are ran are the key to understanding them
+-> Experimental!
+
+Decorators on a property, method, accessor
+    -> First argument is the prototype of the object
+    -> Second argument is the key of the property / method / accessor on the object
+    -> Third argument is the property descriptor
+    -> Decorators are applied when the code for this class is ran (not when an instance is created)
+
+Proprety Descriptor for methods
+    -> writable
+        -> Whether or not this property can be changed
+    -> enumerable
+        -> Whether or not this property get looped over by a 'for...in'
+    -> value
+        -> Current value
+    -> configurable
+        -> Property definition can be changed and property can be deleted
