@@ -291,3 +291,10 @@ Proprety Descriptor for methods
         -> Current value
     -> configurable
         -> Property definition can be changed and property can be deleted
+
+Metadata!!
+    -> Proposed feature to be added to Javascript (and thus, TS)
+    -> Snippets of info that can be tied to a method, property, or class definition
+    -> Can be used for super custom stuff
+    -> Typescript will (optionally) provide type information as metadata
+    -> Read and written using the reflect-metadata package
